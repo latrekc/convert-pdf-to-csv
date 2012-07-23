@@ -74,16 +74,12 @@ CSV.open(filename.gsub(/\.pdf$/, ".csv"), "wb") do |csv|
                 table.each do |y, row|
                         csvRow = []
 
-                        puts y, row.size
-
                         if row.size == 15 # нужно убрать зашитое значение
                                 row.each do |x, cell|
                                         csvRow << cell
                                 end
 
                                 csv << csvRow
-                        else
-                                ap row
                         end
                 end
         end
